@@ -74,3 +74,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
