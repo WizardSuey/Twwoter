@@ -1,0 +1,83 @@
+<%= link_to "Назад", "javascript:history.back()", class: "btn btn-primary back-button " %>
+<div class = "wall-box">
+    <div class="ProfileHeader">
+        <div class="_post_content">
+            <div class="PostHeader">
+                <div>
+                    <% @users.each do |user| %>
+                        <% if user.email == @post.user %>
+                            <%= image_tag user.avatar_url, class: 'Avatar' %>
+                        <% end %>
+                    <% end %>
+                </div>
+                <div class="PostHeaderInfo">
+                    <% @users.each do |user| %>
+                        <% if user.email == @post.user %>
+                            <h5><span><%= link_to @post.user, "/user/#{user.id}" %></span></h5>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+            <div class="content">
+                <div class="post_info">
+                    <div class="wall_text">
+                        <%= @post.body %>
+                    </div>
+                    <div>
+                        <% if @post.photo_url.present? %>
+                            <%=image_tag @post.photo_url, class: 'wall_photo' %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ProfileHeader">
+        <%= form_for([@post, @post.comments.build]) do |form| %>
+            <% if form.object.errors.any? %>
+                <div class="alert alert-danger">
+                    <% form.object.errors.full_messages.each do |message| %>
+                        <p><%= message %></p>
+                    <% end %>
+                </div>
+            <% end %>
+            <input type="hidden" <%= form.text_field :user, :value => Current.user.email %>
+            <%= form.text_area :body, class: 'form-control', placeholder: 'Напишите комментарий...' %>
+            <input type="hidden" <%= form.text_field :post_id %>
+            <%= form.submit "Добавить комментарий", class: 'btn btn-primary mt-2' %>
+        <% end %>
+    </div>
+
+     <% @comments.each do |comment| %>
+        <% if comment.post_id == @post.id %>
+            <div class="ProfileHeader">
+                <div class="comment-section">
+                    <div class="comment">
+                        <div>
+                            <% @users.each do |user| %>
+                                <% if user.email == comment.user %>
+                                    <%= image_tag user.avatar_url, class: "Com-Avatar" %>
+                                <% end %>
+                            <% end %>
+                        </div>
+                        <div class="comment-content">
+                            <div class="User">
+                                <% @users.each do |user| %>
+                                    <% if comment.user == user.email %>
+                                        <span><h4><%= link_to comment.user, "/user/#{user.id}"%></h4></span>
+                                    <% end %>
+                                <% end %>
+                            </div>
+                            <div class="comment-text">
+                                <%= comment.body %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        <% end %>
+    <% end %>
+</div>
+
+

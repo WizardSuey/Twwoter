@@ -1,0 +1,25 @@
+
+<% @newtweets.each do |tweet|%>
+<div class="mb-3 card card-body tweet-box">
+    <div class="mb-3">
+        <div class="mb-2">
+        <% @users.each do |user| %>
+            <% if tweet.user == user.email %>
+                <%= image_tag user.avatar_url, class: 'avatar' %>
+                <strong class = 'tweet-user'>
+                    <%= link_to "#{tweet.user}", "/user/#{user.id}"%>
+                </strong>
+            <% end %>
+        <% end %>
+        </div>
+        <br>
+        <p class="tweet-body"><%= tweet.body %></p>
+        <% if tweet.user == Current.user.email %>
+            <%= link_to "Изменить пост", edit_tweet_path(tweet) %>
+        <% end %>
+    </div>
+</div>
+<% end %>
+
+
+

@@ -1,0 +1,48 @@
+<!-- encoding: utf-8 -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top">
+  <div class="container-fluid">
+    <%= link_to 'Twwoter', root_path, class: 'navbar-brand text' %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to 'Главная', root_path, class: 'nav-link text' %>
+        </li>
+        <li>
+          <%= link_to "Посты", tweets_path, class: 'nav-link text' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'О нас', about_path, class: 'nav-link text' %>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <div class="avatar-container">
+          <% if Current.user %>
+            <%= image_tag Current.user.avatar_url, class: "avatar" %>
+          <% else %>
+            <%= image_tag "default_avatar.png", class: "avatar" %>
+          <% end %>
+        </div>
+        <% if Current.user %>
+          <li class="nav-item">
+            <% if Current.user %>
+            <%= link_to Current.user.email, user_path(Current.user), class: 'nav-link text' %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= button_to "Выйти", logout_path, method: :delete, class: 'btn btn-outline-secondary text' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Зарегестрироваться", sign_up_path, class: 'nav-link text' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Войти", sign_in_path, class: 'nav-link text' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

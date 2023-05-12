@@ -1,0 +1,63 @@
+<div class = "wall-box">
+    <div class="mt-4 mb-2 ProfileHeader">
+        <%= image_tag @user.avatar_url, class: 'profile-avatar' %>
+        <h1 class="profile-email"><%= @user.email %></h1>
+        <% if @user.id == Current.user.id %>
+            <%= link_to 'Редактировать аккаунт', password_path, class: 'btn btn-secondary edit-button' %>
+        <% end %>
+        <hr class="hr">
+    </div>
+    <div class="ProfileHeader">
+        <% if @user.id == Current.user.id %>
+            <%= link_to 'Добавить пост', new_post_path, class: 'btn btn-info' %>
+        <% end %>
+    </div>
+    <% @posts.each do |post| %>
+        <% if post.user == @user.email %>
+        <div class="ProfileHeader">
+            <div class="_post_content">
+                <div class="PostHeader">
+                    <div>
+                        <% if post.user == @user.email %>
+                            <%= image_tag @user.avatar_url, class: 'Avatar' %>
+                        <% end %>
+                    </div>
+                    <div class="PostHeaderInfo">
+                        <% if post.user == @user.email %>
+                            <h5><span><%= @user.email %></span></h5>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="post_info">
+                        <div class="wall_text">
+                            <%= post.body %>
+                        </div>
+                        <div class="PhotoOnPost">
+                            <% if post.photo_url.present? %>
+                            <%=image_tag post.photo_url, class: 'wall_photo' %>
+                            <% end %>
+                        </div>
+                        <div class="btn_wrap">
+                            <div class="btns">
+                                <div class="like-button">                                                                      
+                                    <%= button_to fa_icon("heart"), like_post_path(post), method: :post %>
+                                    <span class="like_count"><%= post.likes_count %></span>                                                                   
+                                </div>
+                                <div class="comment-button">
+                                    <%= link_to fa_icon('comment'), "/post/#{post.id}" %>                      
+                                    <span class="comments-count"><%= post.comments.count %></span>
+                                </div>
+                                <div class="share-button">
+                                    <button class="fa-solid fa-share fa-lg"></button>
+                                    <span class="share-count">0</span>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    <% end %>
+</div>

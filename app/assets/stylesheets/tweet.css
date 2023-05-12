@@ -1,0 +1,18 @@
+.tweet-box {
+    background-color: #e6e6e6;
+}
+
+.tweet-user {
+    color: rgb(105, 157, 202);
+}
+
+.tweet-body {
+    color: rgba(3, 10, 17, 0.986);
+}
+
+.post-img {
+    width: 300px;
+    height: 400px;
+    
+}
+

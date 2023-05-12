@@ -1,0 +1,12 @@
+<h1>Забыли пароль?</h1>
+
+<%= form_with url: password_reset_path, data: {turbo: false} do |form| %>
+    <div class="mb-3">
+        <%= form.label :email %>
+        <%= form.text_field :email, class: 'form-control' %>
+    </div>
+    
+    <div class="mb-3">
+        <%= form.submit "Reser Password", class: 'btn btn-primary' %>
+    </div>
+<% end %>

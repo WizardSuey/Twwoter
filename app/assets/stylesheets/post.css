@@ -1,0 +1,110 @@
+body {
+    padding-top: 70px; /* Adjust this value to match the height of your navbar */
+  }
+  
+
+
+._post_content {
+    margin-bottom: 10px;
+}
+
+.content {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.PostHeader {
+    padding-top: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex; 
+    align-items: center; 
+}
+
+.Avatar {
+    position: relative;
+    max-height: 50px;
+    max-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; 
+    margin-right: 10px;
+}
+
+
+
+
+
+.PostHeaderInfo h5 {
+    font-size: 16px; 
+    margin: 0; 
+    color: #333
+}
+
+
+
+.wall_text {
+   margin-bottom: 10px;
+}
+
+
+.wall_photo {
+    max-width: 639px;
+    max-height: 825px;
+    margin-bottom: 10px;
+}
+
+.PhotoOnPost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_wrap {
+    display: flex;
+    justify-content: flex-start;
+}
+.btns {
+    display: flex;
+    align-items: center;
+}
+.like-button, .comment-button, .share-button {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.button-heart, .fa-share, .fa-comment, .fa-heart, .fa-heart-o {
+    background-color: transparent;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+    transition: color 0.2s ease-in-out;
+}
+.button-heart:hover, .fa-share:hover, .fa-comment:hover, .fa-heart:hover, .fa-heart-o:hover {
+    color: #130f11;
+}
+.like_count, .comments-count, .share-count {
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.like-button button {
+    all: unset;
+  }
+
+.back-button {
+  position: fixed;
+  top: 15;
+  left: 10px;
+  border: none;
+  text-decoration: none;
+}
+
+
+
+
+
+  

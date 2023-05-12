@@ -1,0 +1,6 @@
+Hi <%= params[:user].email %>
+
+Someone requested a reset of ypur password.
+
+Если это были вы, перейдите по ссылке ниже. Срок действия ссылки автоматически истечет через 15 минут.
+<%= link_to "Reset Password", password_reset_edit_url(token: @token) %>

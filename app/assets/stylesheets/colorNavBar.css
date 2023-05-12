@@ -1,0 +1,7 @@
+.text {
+    color: aliceblue;
+}
+
+.text:hover {
+    color: rgb(10, 148, 148);
+}
