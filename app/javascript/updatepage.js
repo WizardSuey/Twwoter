@@ -1,20 +1,13 @@
 // Получаем кнопку лайка и счётчик лайков
-const likeButton = document.querySelector('.like-button')
-const likeCount = document.querySelector('.like_count')
+const likeButton = document.querySelector('.item-button')
+console.log(likeButton)
 
 // Добавляем обработчик события
-likeButton.addEventListener('click', (event) => {
-  // Останавливаем действие кнопки по умолчанию (перезагрузка страницы)
-  event.preventDefault()
-
-  // Выполняем AJAX-запрос на сервер для обновления лайка
-  fetch(likeButton.href, { method: 'POST', headers: { 'X-CSRF-Token': '<%= form_authenticity_token %>' } })
-    .then(response => response.json()) // Преобразуем ответ в JSON
-
-    .then(data => {
-      // Обновляем счётчик лайков
-      likeCount.textContent = data.likes_count
-    })
-
-    .catch(error => console.error(`Ошибка: ${error}`))
-})
+// likeButton.addEventListener('click', (event) => {
+//   console.log("1")
+  
+// })
+likeButton.onclick = (event) => {
+  console.log(123)
+  window.location.reload(true)
+}

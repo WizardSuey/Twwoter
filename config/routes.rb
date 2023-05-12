@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   end
   
   post '/posts/:id/like', to: 'posts#like', as: 'like_post'
-  delete '/posts/:id/unlike', to: 'posts#unlike', as: 'unlike_post'
+  #delete '/posts/:id/unlike', to: 'posts#unlike', as: 'unlike_post'
 
   resources :comments
   post "posts/:id", to: "comments#create"

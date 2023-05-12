@@ -4,7 +4,4 @@ class Post < ApplicationRecord
     has_many :likes
     validates :body, length: { minimum: 1, maximum: 600 }
     
-    def likes_count
-        likes.count
-    end
 end

@@ -21,13 +21,25 @@ class PostsController < ApplicationController
     if Current.user.likes.exists?(post: @post)
       Current.user.likes.find_by(post: @post).destroy
       @post.decrement!(:likes_count)
-      redirect_to @post, notice: "Вы убрали лайк."
+      #redirect_to @post, notice: "Вы убрали лайк."
     else
       Current.user.likes.create(post: @post)
       @post.increment!(:likes_count)
-      redirect_to @post, notice: "Спасибо за лайк!"
+      #redirect_to @post, notice: "Спасибо за лайк!"
     end
   end
+
+  # def unlike
+  #   @post = Post.find(params[:id])
+
+  #   if Current.user.likes.exists?(post: @post)
+  #     Current.user.likes.find_by(post: @post).destroy
+  #     @post.decrement!(:likes_count)
+  #     #redirect_to @post, notice: "Unliked."
+  #   #else
+  #     #redirect_to @post, alert: "You haven't liked this post yet."
+  #   end
+  # end
 
   def show
     @post = Post.find(params[:id])

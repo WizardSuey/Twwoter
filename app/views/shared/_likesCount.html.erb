@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+<% if post.user == @user.email %>
+<span class="like_count"><%= post.likes_count %></span>
+<%end%>
+<%end%>
