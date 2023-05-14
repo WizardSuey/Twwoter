@@ -3,6 +3,13 @@ class UsersController < ApplicationController
     @user = User.find_by(params[:id])
   end
 
+  def delete_post
+    @post = Post.find(params[:id])
+    @post.destroy
+    
+    redirect_to "/user/#{Current.user.id}", notice: "Пост удалён успешно."
+  end
+
   def show
    
     @comments = Comment.all

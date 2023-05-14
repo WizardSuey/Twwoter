@@ -14,6 +14,8 @@ class PostsController < ApplicationController
       render :new
     end
   end
+  
+  
 
   def like
     @post = Post.find(params[:id])

@@ -58,8 +58,8 @@
                                     <span class="share-count">0</span>
                                 </div>
                                 <% if Current.user.email == post.user %>
-                                    <div trash-button>
-                                        <%= button_to fa_icon("trash"), post_path(post), method: :delete, class: 'item-button' %>
+                                    <div class="trash-button remove-styles">
+                                        <%= button_to fa_icon("trash"), delete_post_user_path(post), method: :delete, class: 'item-button' %>
                                     </div>
                                 <% end %>
                             </div>                           

@@ -4,6 +4,15 @@ body {
   
 
 
+  .remove-styles {
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer; /* If you want the button to be clickable */
+  }
+  
+
+
 ._post_content {
     margin-bottom: 10px;
 }
@@ -92,6 +101,10 @@ body {
 }
 
 .like-button button {
+    all: unset;
+  }
+
+  .trash-button button {
     all: unset;
   }
 

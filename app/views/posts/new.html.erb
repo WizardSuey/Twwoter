@@ -2,7 +2,7 @@
     <%= form_with model: @post, :html => { :multipart => true }, data: {turbo: false} do |form| %>
         <%= render "shared/form_errors", form: form %>
         <%= form.text_field :body, placeholder: 'Что у вас нового?', class: 'form-control' %>
-        <%= form.file_field :photo, class: 'form-control' %>
+        <%= form.file_field :photo, class: 'form-control', required: false %>
         <input type="hidden"<%= form.text_field :user, :value => Current.user.email %>
         <div>
             <p>Расскажите или покажите другим пользователям что-то интересное.</p>
