@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_14_094125) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_15_092553) do
   create_table "comments", force: :cascade do |t|
     t.string "user"
     t.string "body"
@@ -37,25 +37,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_14_094125) do
     t.binary "avatar"
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "body"
-    t.binary "photo"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "user"
     t.integer "likes_count"
-  end
-
-  create_table "tweets", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "email_id", null: false
-    t.text "body"
-    t.datetime "publish_at"
-    t.string "tweet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email_id"], name: "index_tweets_on_email_id"
-    t.index ["user_id"], name: "index_tweets_on_user_id"
+    t.binary "photo_data"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,6 +63,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_14_094125) do
 
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
-  add_foreign_key "tweets", "emails"
-  add_foreign_key "tweets", "users"
 end

@@ -34,8 +34,8 @@
                             <%= post.body %>
                         </div>
                         <div class="PhotoOnPost">
-                            <% if post.photo_url.present? %>
-                                <%=image_tag post.photo_url, class: 'wall_photo' %>
+                            <% if post.photo.present? %>
+                                <%= image_tag "data:photo/jpeg;base64,#{Base64.encode64(post.photo.read)}", class: 'wall-photo' %>
                             <% end %>
                         </div>
                         <div class="btn_wrap">
