@@ -12,7 +12,7 @@ body {
   }
   
 .wall-box {
-    posithion:absolute;
+    position: absolute;
    transform: translate(-50%, 0%);
     left: 50%;
     
