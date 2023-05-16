@@ -9,5 +9,5 @@ console.log(likeButton)
 // })
 likeButton.onclick = (event) => {
   console.log(123)
-  window.location.reload(true)
+  location.reload();
 }
