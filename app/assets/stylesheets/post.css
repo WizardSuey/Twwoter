@@ -126,7 +126,8 @@ body {
 @media only screen and (max-width: 400px) {
     .wall-box {
         position: relative;
-        width: 384px;
+        width: 380px;
+        left: -17px;
     }
 }
 
