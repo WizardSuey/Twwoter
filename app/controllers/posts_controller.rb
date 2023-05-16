@@ -19,15 +19,17 @@ class PostsController < ApplicationController
 
   def like
     @post = Post.find(params[:id])
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
     if Current.user.likes.exists?(post: @post)
       Current.user.likes.find_by(post: @post).destroy
       @post.decrement!(:likes_count)
-      redirect_to @user, notice: "Вы убрали лайк."
+      redirect_to @post, notice: "Вы убрали лайк."
+      #redirect_back(fallback_location: root_path)
     else
       Current.user.likes.create(post: @post)
       @post.increment!(:likes_count)
-      redirect_to @user, notice: "Спасибо за лайк!"
+      redirect_to @post, notice: "Спасибо за лайк!"
+      #redirect_back(fallback_location: root_path)
     end
   end
 
