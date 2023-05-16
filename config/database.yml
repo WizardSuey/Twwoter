@@ -13,7 +13,7 @@ default: &default
 
 development:
   <<: *default
-#database: twwiter_development
+  database: twwiter_development
   #database: development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
