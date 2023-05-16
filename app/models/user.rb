@@ -7,7 +7,14 @@ class User < ApplicationRecord
     has_many :likes
     has_many :posts
     has_secure_password
-
+    
+    def avatar=(input_data)
+        self.avatar_data = input_data.read
+      end
+    
+      def avatar
+        StringIO.new(avatar_data)
+    end
 
     validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/ }
     validates :avatar, presence: true
