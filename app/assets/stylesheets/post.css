@@ -14,7 +14,7 @@ body {
 .wall-box {
     posithion:absolute;
    transform: translate(-50%, 0%);
-    left: 75%;
+    left: 50%;
     
 }
 
