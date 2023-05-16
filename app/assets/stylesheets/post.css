@@ -12,9 +12,10 @@ body {
   }
   
 .wall-box {
+    posithion:absolute;
    transform: translate(-50%, 0%);
     left: 50%;
-    posithion:absolute
+    
 }
 
 ._post_content {
