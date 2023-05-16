@@ -12,6 +12,8 @@
 }
 
 .profile-email {
+  top: -36px;
+  margin-left: 187px;
   position: relative;
   font-size: 25px;
 /*   left: 212px;
