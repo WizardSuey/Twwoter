@@ -20,9 +20,9 @@
 }
 
 .edit-button {
-  position: absolute;
-  left: 640px;
-  top: 200px;
+  position: relative;
+/*   left: 640px;
+  top: 200px; */
 }
 
 .ProfileHeader {
