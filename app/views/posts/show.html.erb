@@ -24,8 +24,8 @@
                         <%= @post.body %>
                     </div>
                     <div>
-                        <% if @post.photo_url.present? %>
-                            <%=image_tag @post.photo_url, class: 'wall_photo' %>
+                        <% if @post.photo.present? %>
+                            <%=image_tag @post.photo, class: 'wall_photo' %>
                         <% end %>
                     </div>
                 </div>
