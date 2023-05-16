@@ -7,7 +7,7 @@
                     <% @users.each do |user| %>
                         <% if user.email == @post.user %>
                             <%# image_tag user.avatar_url, class: 'Avatar' %>
-                            <%= image_tag "data:avatar/jpeg;base64,#{Base64.encode64(Current.user.avatar.read)}", class: 'Avatar' %>
+                            <%= image_tag "data:avatar/jpeg;base64,#{Base64.encode64(user.avatar.read)}", class: 'Avatar' %>
                         <% end %>
                     <% end %>
                 </div>
