@@ -123,6 +123,10 @@ body {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 600px) {
+    .wall-box {
+        position: relative;
+}
 
 
 
