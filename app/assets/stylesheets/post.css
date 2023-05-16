@@ -12,7 +12,8 @@ body {
   }
   
 .wall-box {
-    
+    transform: translate(-50%, 0%);
+  left: 50%;
 }
 
 ._post_content {
