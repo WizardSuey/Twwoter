@@ -12,10 +12,10 @@
 }
 
 .profile-email {
-  position: absolute;
+  position: relative;
   font-size: 25px;
-  left: 212px;
-  top: 200px;
+/*   left: 212px;
+  top: 200px; */
   color: rgb(105, 157, 202);
 }
 
