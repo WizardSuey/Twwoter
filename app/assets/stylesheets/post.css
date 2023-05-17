@@ -127,7 +127,7 @@ body {
     .wall-box {
         position: relative;
         width: 380px;
-        left: -10px;
+/*         left: -10px; */
     }
 }
 
