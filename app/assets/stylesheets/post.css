@@ -139,13 +139,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 800px) {
-    .wall-box {
-        position: relative;
-        width: 699px;
-/*         left: -10px; */
-    }
-}
+
 
 
 
