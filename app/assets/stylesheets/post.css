@@ -123,6 +123,14 @@ body {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 400px) {
+    .wall-box {
+        position: relative;
+        width: 380px;
+        left: -10px; 
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .wall-box {
         position: relative;
