@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = "Комментарий добавлен!"
-      redirect_to @post
+      redirect_to request.referrer
     else
       flash.now[:danger] = "Ошибка при добавлении комментария"
       render :new
