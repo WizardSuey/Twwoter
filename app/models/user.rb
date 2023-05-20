@@ -17,6 +17,6 @@ class User < ApplicationRecord
     end
 
     validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/ }
-    validates :avatar
+    validates :avatar, presence: true
     
 end
