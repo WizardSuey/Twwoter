@@ -7,8 +7,8 @@
                 <div>
                     <% @users.each do |user| %>
                         <% if user.email == @post.user %>
-                            <%# image_tag user.avatar_url, class: 'Avatar' %>
-                            <%= image_tag "data:avatar/jpeg;base64,#{Base64.encode64(user.avatar.read)}", class: 'Avatar' %>
+                            <%= image_tag user.avatar_url, class: 'Avatar' %>
+                            <%# image_tag "data:avatar/jpeg;base64,#{Base64.encode64(user.avatar.read)}", class: 'Avatar' %>
                         <% end %>
                     <% end %>
                 </div>
@@ -60,8 +60,8 @@
                         <div>
                             <% @users.each do |user| %>
                                 <% if user.email == comment.user %>
-                                    <%# image_tag user.avatar_url, class: "Com-Avatar" %>
-                                    <%= image_tag "data:avatar/jpeg;base64,#{Base64.encode64(user.avatar.read)}", class: 'Com-Avatar' %>
+                                    <%= image_tag user.avatar_url, class: "Com-Avatar" %>
+                                    <%# image_tag "data:avatar/jpeg;base64,#{Base64.encode64(user.avatar.read)}", class: 'Com-Avatar' %>
                                 <% end %>
                             <% end %>
                         </div>
