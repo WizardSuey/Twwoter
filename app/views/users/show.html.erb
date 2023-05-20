@@ -54,10 +54,10 @@
                             <div class="btns">
                                 <div class="like-button"> 
                                     <% if Current.user.likes.exists?(post: @post) %>
-                                        <%= button_to fa_icon("heart-o"), like_post_path(post), method: :post, class: 'item-button' %>
+                                        <%= button_to fa_icon("heart-o"), like_post_path(post), method: :post, class: 'item-button', onclick: 'location.reload()' %>
                                         <span class="like_count"><%= post.likes_count %></span>
                                     <% else %>     
-                                        <%= button_to fa_icon("heart"), like_post_path(post), method: :post, class: 'item-button' %>
+                                        <%= button_to fa_icon("heart"), like_post_path(post), method: :post, class: 'item-button', onclick: 'location.reload()' %>
                                         <span class="like_count"><%= post.likes_count %></span>
                                     <% end %>                                                        
                                 </div>
