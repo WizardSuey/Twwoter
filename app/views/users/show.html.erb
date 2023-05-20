@@ -1,6 +1,6 @@
  <div class = "wall-box mx-auto">
     <div class="mt-4 mb-2 ProfileHeader">
-        <% if Current.user.avatar.present? %>
+        <% if @user.avatar.present? %>
           <%= image_tag @user.avatar_url, class: 'profile-avatar' %>
           <%# image_tag "data:avatar/jpeg;base64,#{Base64.encode64(@user.avatar.read)}", class: 'profile-avatar' %>
         <% else %>
