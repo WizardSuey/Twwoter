@@ -19,7 +19,7 @@
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <div class="avatar-container">
-          <% if Current.user %>
+          <% if Current.user.avatar.present? %>
             <%= image_tag Current.user.avatar_url, class: "avatar" %>
             <%# image_tag "data:avatar/jpeg;base64,#{Base64.encode64(Current.user.avatar.read)}", class: 'Avatar' %>
           <% else %>
