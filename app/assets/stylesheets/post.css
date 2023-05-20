@@ -85,12 +85,12 @@ body {
     display: flex;
     align-items: center;
 }
-.like-button, .comment-button, .share-button, .trash-button, edit-button {
+.like-button, .comment-button, .share-button, .trash-button, .edit-button {
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
-.button-heart, .fa-share, .fa-comment, .fa-heart, .fa-heart-o, .fa-trash, fa-edit {
+.button-heart, .fa-share, .fa-comment, .fa-heart, .fa-heart-o, .fa-trash, .fa-edit {
     background-color: transparent;
     border: none;
     color: #ccc;
@@ -99,7 +99,7 @@ body {
     outline: none;
     transition: color 0.2s ease-in-out;
 }
-.button-heart:hover, .fa-share:hover, .fa-comment:hover, .fa-heart:hover, .fa-heart-o:hover, .fa-trash:hover, fa-edit:hover {
+.button-heart:hover, .fa-share:hover, .fa-comment:hover, .fa-heart:hover, .fa-heart-o:hover, .fa-trash:hover, .fa-edit:hover {
     color: #130f11;
 }
 .like_count, .comments-count, .share-count {
@@ -129,6 +129,9 @@ body {
         width: 380px;
         left: -10px; 
     }
+    .fa-edit {
+        color: #130f11;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -136,6 +139,18 @@ body {
         position: relative;
         width: 380px;
 /*         left: -10px; */
+    }
+    .profile-email {
+        top: 0px;
+        left: 0px;
+        position: relative;
+        font-size: 5px;
+        /*   left: 212px;
+        top: 200px; */
+        color: rgb(105, 157, 202);
+    }
+    .fa-edit {
+        color: #130f11;
     }
 }
 
@@ -145,6 +160,21 @@ body {
         position: relative;
         width: 699px;
 /*         left: -10px; */
+    }
+    .profile-email {
+        position: relative;
+        top: -44px;
+        left: 187px;
+        font-size: 5px;
+        /*   left: 212px;
+        top: 200px; */
+        color: rgb(105, 157, 202);
+    }
+    .fa-edit {
+        position: relative;
+        left: 643px;
+        top: -246px;
+        color: #130f11;
     }
 }
 
