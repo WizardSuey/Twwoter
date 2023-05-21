@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class User < ApplicationRecord
+    before_create :set_default_vip_status
     #mount_uploader :avatar, AvatarUploader
     has_many :tweets
     has_one_attached :avatar
@@ -15,6 +16,10 @@ class User < ApplicationRecord
     
       def avatar
         StringIO.new(avatar_data)
+    end
+    
+    def set_default_vip_status
+      self.vip ||= false
     end
 
     validates :email, presence: true, uniqueness: true
