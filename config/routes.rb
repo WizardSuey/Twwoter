@@ -52,5 +52,8 @@ Rails.application.routes.draw do
   
   get "post/:id", to: "posts#show"
   
-
+  delete 'users/:id' => 'users#destroy', as: :destroy_user
+  
+  post '/user/:id/subscribe', to: 'users#subscribe', as: 'subscribe_user'
+  delete '/user/:id/unsubscribe', to: 'users#unsubscribe', as: 'unsubscribe_user'
 end
