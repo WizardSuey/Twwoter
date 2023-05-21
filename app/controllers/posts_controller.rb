@@ -70,7 +70,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user, :body, :photo)
+    params.require(:post).permit(:user, :body, :photo, :likes_count)
   end
 
 end
