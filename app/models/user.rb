@@ -22,7 +22,7 @@ class User < ApplicationRecord
       self.vip ||= false
     end
 
-    validates :email, presence: true, uniqueness: true
-    validates :avatar, presence: true, length: { maximum: 20 }
+    validates :email, presence: true, uniqueness: true, length: { maximum: 20 }
+    validates :avatar, presence: true
     
 end
