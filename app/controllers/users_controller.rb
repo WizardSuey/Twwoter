@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in!
   def index
     @user = User.find_by(params[:id])
   end
@@ -9,8 +10,8 @@ class UsersController < ApplicationController
     
     redirect_to "/user/#{Current.user.id}", notice: "Пост удалён успешно."
   end
-  
-   def edit
+
+  def edit
     @user = User.find(params[:id])
   end
   
@@ -24,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def show
-   
     @comments = Comment.all
     @comments_count = @comments.size
     @posts = Post.all
@@ -44,20 +44,28 @@ class UsersController < ApplicationController
     @user.decrement!(:subscribers_count)
     redirect_to request.referrer
   end
-  
-  def promote_to_vip1
+
+  def destroy
     @user = User.find(params[:id])
-    @user.update(vip1: true)
+    @user.destroy
+    redirect_to root_path, notice: 'Ваш аккаунт удалён.'
+  end
+
+  def promote_to_vip
+    @user = User.find(params[:id])
+    @user.increment!(:vip)
     redirect_to @user
   end
   
-  def demote_from_vip1
+  def demote_from_vip
     @user = User.find(params[:id])
-    @user.update(vip1: false)
+    @user.decrement!(:vip)
     redirect_to @user
   end
-  
-  def user_params
+
+  private
+
+    def user_params
         params.require(:user).permit(:subscribers_count, :user_id)
-  end
+    end
 end
