@@ -5,10 +5,11 @@ class UsersController < ApplicationController
   end
 
   def delete_post
+    @user = User.find(params[:id])
     @post = Post.find(params[:id])
     @post.destroy
     
-    redirect_to "/user/#{Current.user.id}", notice: "Пост удалён успешно."
+    redirect_to @user, notice: "Пост удалён успешно."
   end
 
   def edit
