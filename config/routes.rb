@@ -64,4 +64,7 @@ Rails.application.routes.draw do
   
   get "user/:id/edit", to: "users#edit", as: :user_edit
   patch "user/:id/edit", to: "users#update"
+  
+  get "post/:id/edit", to: "posts#edit"
+  patch "post/:id/edit", to: "posts#update"
 end
