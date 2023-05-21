@@ -1,0 +1,13 @@
+<h1>Редактировать пользователя</h1>
+
+<%= form_with model: @user, url: "/user/#{@user.id}/edit", :html => { :multipart => true }, data: {turbo: false} do |form| %>
+
+    <div class="mb-3">
+        <%= form.label :subscribers_count %>
+        <%= form.text_field :subscribers_count, class: 'form-control', value: @user.subscribers_count %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "Обновить", class: 'btn btn-primary' %>
+    </div>
+<% end %>
