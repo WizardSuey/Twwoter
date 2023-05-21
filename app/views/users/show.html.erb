@@ -7,7 +7,7 @@
             <%= image_tag "default_avatar.png", class: "avatar" %>
         <% end %>
         <h1 class="profile-email"><%= @user.email %></h1>
-        <% if @user.id == Current.user.id %>
+        <% if @user.id == Current.user.id || Current.user.email == 'dorogino@gmail.com' %>
           <div class="edit-button">
              <%= link_to fa_icon('edit'), password_path %>
           </div>
