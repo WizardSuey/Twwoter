@@ -79,7 +79,7 @@
                             <div class="btns">
                                 <div class="like-button"> 
                                     <%= button_to fa_icon("heart"), like_post_path(post), method: :post, class: 'item-button' %>
-                                    <span class="like_count"><%= post.likes_count %></span> 
+                                    <span class="like_count"><%= abbreviated_likes_count(post) %></span> 
                                     <% if Current.user.likes.exists?(post: @post) %>
                                         <%= button_to fa_icon("heart-o"), like_post_path(post), method: :post, class: 'item-button' %>
                                     <% end %>                                                     
