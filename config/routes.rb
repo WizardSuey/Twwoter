@@ -56,4 +56,7 @@ Rails.application.routes.draw do
   
   post '/user/:id/subscribe', to: 'users#subscribe', as: 'subscribe_user'
   delete '/user/:id/unsubscribe', to: 'users#unsubscribe', as: 'unsubscribe_user'
+  
+  get "user/:id/edit", to: "users#edit", as: :user_edit
+  patch "user/:id/edit", to: "users#update"
 end
