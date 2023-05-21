@@ -1,6 +1,6 @@
 .tweet-box {
     background-color: #e6e6e6;
-    width: 699px;
+    
 }
 
 .tweet-user {
@@ -17,9 +17,5 @@
 /*     width: 300px;
     height: 400px; */ 
 }
-.addtweet-btn {
-    position: relative;
-    left: 1024px;
-    top: 10px;
-}
+
 
