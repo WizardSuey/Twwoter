@@ -7,6 +7,7 @@ class User < ApplicationRecord
     has_many :likes
     has_many :posts
     has_secure_password
+    has_many :subscribers
     
     def avatar=(input_data)
         self.avatar_data = input_data.read
