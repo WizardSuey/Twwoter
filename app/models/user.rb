@@ -16,7 +16,7 @@ class User < ApplicationRecord
         StringIO.new(avatar_data)
     end
 
-    validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/ }
+    validates :email, presence: true, uniqueness: true
     validates :avatar, presence: true
     
 end
