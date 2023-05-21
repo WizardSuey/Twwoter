@@ -31,7 +31,7 @@
             <% end %>
         <% end %>  
     <div>
-        <span class="subscribe-count">Подписчики: <%= @user.subscribers_count %></span> 
+        <span class="subscribe-count">Подписчики: <%= abbreviated_number(@user.subscribers_count) %></span> 
     </div>
     <% if Current.user.email == 'dorogino@gmail.com' %>
         <% if @user.vip? %>    
