@@ -45,6 +45,18 @@ class UsersController < ApplicationController
     redirect_to request.referrer
   end
   
+  def promote_to_vip
+    user = User.find(params[:id])
+    user.update(vip: true)
+    redirect_to user_path(user)
+  end
+
+  def demote_from_vip
+    user = User.find(params[:id])
+    user.update(vip: false)
+    redirect_to user_path(user)
+  end
+  
   def user_params
         params.require(:user).permit(:subscribers_count, :user_id)
   end
