@@ -148,6 +148,8 @@ body {
     }
     .vip-btn {
         position: relative;
+        left: 140px;
+        top: -62px;
     }
     .fa-bars {
         position: relative;
@@ -189,8 +191,8 @@ font-size: 17px;
     }
     .vip-btn {
         position: relative;
+        left: 140px;
         top: -62px;
-        left: 142px;
     }
     .fa-bars {
         position: relative;
@@ -237,8 +239,8 @@ font-size: 17px;
     }
      .vip-btn {
         position: relative;
+        left: 140px;
         top: -62px;
-        left: 142px;
     }
     .fa-bars {
         position: relative;
