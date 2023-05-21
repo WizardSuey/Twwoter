@@ -9,6 +9,6 @@ class Post < ApplicationRecord
       end
     
       def photo
-        StringIO.new(photo_data)
+        photo_data.blank? ? nil : StringIO.new(photo_data)
     end
 end
