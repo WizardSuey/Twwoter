@@ -1,26 +1,22 @@
  <div class = "wall-box mx-auto">
     <div class="mt-4 mb-2 ProfileHeader">
-        <% if @user.avatar.present? %>
-          <%# image_tag @user.avatar_url, class: 'profile-avatar' %>
-          <%= image_tag "data:avatar/jpeg;base64,#{Base64.encode64(@user.avatar.read)}", class: 'profile-avatar' %>
-        <% else %>
-            <%= image_tag "default_avatar.png", class: "avatar" %>
-        <% end %>
+        <%= image_tag @user.avatar_url, class: 'profile-avatar' %>
+        <%# image_tag "data:avatar/jpeg;base64,#{Base64.encode64(@user.avatar.read)}", class: 'profile-avatar' %>
         <h1 class="profile-email">
-         <%= @user.email %>
-         <% if @user.vip1? %>
-            <span class="VIP-p">VIP</span>
-         <% elsif @user.email == 'dorogino@gmail.com' %>
-            <span class="VIP-p">ADMIN</span>
-         <% end %>
+            <%= @user.email %>
+            <% if @user.vip? %>
+                <span class="VIP-p">VIP</span>
+            <% elsif @user.email == 'dorogino@gmail.com' %>
+                <span class="VIP-p">ADMIN</span>
+            <% end %>
         </h1>
         <% if @user.id == Current.user.id %>
           <div class="edit-button">
-             <%= link_to fa_icon('edit'), password_path %>
+            <%= link_to fa_icon('edit'), password_path %>
           </div>
         <% end %>
         <% if Current.user.email == 'dorogino@gmail.com' %> 
-              <%= link_to fa_icon('bars'), edit_user_path, class: 'admin-btn' %>
+            <%= link_to fa_icon('bars'), edit_user_path, class: 'admin-btn' %>
         <% end %>
         <hr class="hr">
     </div>
@@ -33,20 +29,17 @@
             <% else %>
                 <%= button_to 'Подписаться', subscribe_user_path(@user), method: :post, class: 'btn btn-info sub-btn' %>
             <% end %>
-        <% end %>   
+        <% end %>  
     <div>
         <span class="subscribe-count">Подписчики: <%= @user.subscribers_count %></span> 
     </div>
-     <% if Current.user.email == 'dorogino@gmail.com' %>
-            <% if @user.vip1? %>
-                    <%= button_to "Убрать VIP", demote_from_vip_user_path(@user), method: :post, class: 'btn btn-danger' %>
-            <% else %>
-                    <%= button_to "Добавить VIP", promote_to_vip_user_path(@user), method: :post, class: 'btn btn-warning' %>
-            <% end %>
+    <% if Current.user.email == 'dorogino@gmail.com' %>
+        <% if @user.vip? %>    
+                <%= button_to "Убрать VIP", demote_from_vip_user_path(@user), method: :post, class: 'btn btn-danger'%>  
+        <% else %>
+                <%= button_to "Добавить VIP", promote_to_vip_user_path(@user), method: :post, class: 'btn btn-warning'%>
         <% end %>
-     <div>
-         <span class="subscribe-count"></span>
-     </div>
+    <% end %>
     </div>
     <% @posts.each do |post| %>
         <% if post.user == @user.email %>
@@ -55,23 +48,19 @@
                 <div class="PostHeader">
                     <div>
                         <% if post.user == @user.email %>
-                           <% if @user.avatar.present? %>
-                              <%# image_tag @user.avatar_url, class: 'Avatar' %>
-                              <%= image_tag "data:avatar/jpeg;base64,#{Base64.encode64(@user.avatar.read)}", class: 'Avatar' %>
-                           <% else %>
-                              <%= image_tag "default_avatar.png", class: "avatar" %>
-                           <% end %>
+                            <%= image_tag @user.avatar_url, class: 'Avatar' %>
+                        <%# image_tag "data:avatar/jpeg;base64,#{Base64.encode64(@user.avatar.read)}", class: 'Avatar' %>
                         <% end %>
                     </div>
                     <div class="PostHeaderInfo">
                         <% if post.user == @user.email %>
                             <h5>
-                               <span><%= @user.email %></span>
-                               <% if @user.vip1? %>
+                                <span><%= @user.email %></span>
+                                <% if @user.vip? %>
                                     <span class="VIP-p">VIP</span>
-                               <% elsif @user.email == 'dorogino@gmail.com' %>
+                                <% elsif  @user.email == 'dorogino@gmail.com' %>
                                     <span class="VIP-p">ADMIN</span>
-                               <% end %>
+                                <% end %>
                             </h5>
                         <% end %>
                     </div>
@@ -89,13 +78,14 @@
                         <div class="btn_wrap">
                             <div class="btns">
                                 <div class="like-button"> 
+                                    <%= button_to fa_icon("heart"), like_post_path(post), method: :post, class: 'item-button' %>
+                                    <span class="like_count"><%= post.likes_count %></span> 
                                     <% if Current.user.likes.exists?(post: @post) %>
                                         <%= button_to fa_icon("heart-o"), like_post_path(post), method: :post, class: 'item-button' %>
-                                        <span class="like_count"><%= post.likes_count %></span>
-                                    <% else %>     
-                                        <%= button_to fa_icon("heart"), like_post_path(post), method: :post, class: 'item-button' %>
-                                        <span class="like_count"><%= post.likes_count %></span>
-                                    <% end %>                                                        
+                                    <% end %>                                                     
+                                    <script>
+                                        //location.reload();
+                                    </script>   
                                 </div>
                                 <div class="comment-button">
                                     <%= link_to fa_icon('comment'), "/post/#{post.id}" %>                      
