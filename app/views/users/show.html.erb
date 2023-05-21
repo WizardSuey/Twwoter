@@ -6,7 +6,14 @@
         <% else %>
             <%= image_tag "default_avatar.png", class: "avatar" %>
         <% end %>
-        <h1 class="profile-email"><%= @user.email %></h1>
+        <h1 class="profile-email">
+         <%= @user.email %>
+         <% if @user.vip? %>
+            <span class="VIP-p">VIP</span>
+         <% elsif @user.vip? and @user.email == 'dorogino@gmail.com' %>
+            <span class="VIP-p">ADMIN</span>
+         <% end %>
+        </h1>
         <% if @user.id == Current.user.id %>
           <div class="edit-button">
              <%= link_to fa_icon('edit'), password_path %>
@@ -62,7 +69,14 @@
                     </div>
                     <div class="PostHeaderInfo">
                         <% if post.user == @user.email %>
-                            <h5><span><%= @user.email %></span></h5>
+                            <h5>
+                               <span><%= @user.email %></span>
+                               <% if @user.vip? %>
+                                    <span class="VIP-p">VIP</span>
+                               <% elsif @user.vip? and @user.email == 'dorogino@gmail.com' %>
+                                    <span class="VIP-p">ADMIN</span>
+                               <% end %>
+                            </h5>
                         <% end %>
                     </div>
                 </div>
