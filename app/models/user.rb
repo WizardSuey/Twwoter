@@ -18,6 +18,6 @@ class User < ApplicationRecord
     end
 
     validates :email, presence: true, uniqueness: true
-    validates :avatar, presence: true
+    validates :avatar, presence: true, , length: { maximum: 20 }
     
 end
