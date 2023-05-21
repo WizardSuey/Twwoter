@@ -178,10 +178,18 @@ body {
     }
     .vip-btn {
         position: relative;
+        top: -62px;
+        left: 142px;
     }
     .fa-bars {
         position: relative;
     }
+    .VIP-p {
+        color: red;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 25px;
+      }
 }
 
 
@@ -213,14 +221,19 @@ body {
     }
      .vip-btn {
         position: relative;
-        top: -298px;
-        left: 500px;
+        top: -62px;
+        left: 142px;
     }
     .fa-bars {
         position: relative;
         left: 642px;
         top: -229px;
     }
+    .VIP-p {
+        color: red;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
 }
 
 
