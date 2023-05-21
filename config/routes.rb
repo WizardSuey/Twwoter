@@ -54,6 +54,10 @@ Rails.application.routes.draw do
   
   delete 'users/:id' => 'users#destroy', as: :destroy_user
   
+  post 'users/:id/promote', to: 'users#promote_to_vip', as: :promote_to_vip_user
+  post 'users/:id/demote', to: 'users#demote_from_vip', as: :demote_from_vip_user
+  get 'vip', to: 'vip#index', as: 'vip'
+  
   post '/user/:id/subscribe', to: 'users#subscribe', as: 'subscribe_user'
   delete '/user/:id/unsubscribe', to: 'users#unsubscribe', as: 'unsubscribe_user'
   
