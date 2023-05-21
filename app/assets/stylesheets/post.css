@@ -93,7 +93,7 @@ body {
 .button-heart, .fa-share, .fa-comment, .fa-heart, .fa-heart-o, .fa-trash, .fa-edit, .fa-cog {
     background-color: transparent;
     border: none;
-    color: #ccc;
+    color: #8f4d4d62;
     cursor: pointer;
     font-size: 20px;
     outline: none;
