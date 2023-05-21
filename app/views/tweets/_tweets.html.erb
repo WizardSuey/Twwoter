@@ -1,12 +1,11 @@
-
-<% @newtweets.each do |tweet|%>
+<% @newtweets.order(created_at: :desc).each do |tweet|%>
 <div class="mb-3 card card-body tweet-box">
     <div class="mb-3">
         <div class="mb-2">
         <% @users.each do |user| %>
             <% if tweet.user == user.email %>
-                <%# image_tag user.avatar_url, class: 'avatar' %>
-                <%= image_tag "data:avatar/jpeg;base64,#{Base64.encode64(user.avatar.read)}", class: 'avatar' %>
+                <%= image_tag user.avatar_url, class: 'avatar' %>
+                <%# image_tag "data:avatar/jpeg;base64,#{Base64.encode64(user.avatar.read)}", class: 'avatar' %>
                 <strong class = 'tweet-user'>
                     <%= link_to "#{tweet.user}", "/user/#{user.id}"%>
                 </strong>
@@ -21,6 +20,5 @@
     </div>
 </div>
 <% end %>
-
 
 
