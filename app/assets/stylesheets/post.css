@@ -85,12 +85,12 @@ body {
     display: flex;
     align-items: center;
 }
-.like-button, .comment-button, .share-button, .trash-button, .edit-button {
+.like-button, .comment-button, .share-button, .trash-button, .edit-button, .cog-button {
     display: flex;
     align-items: center;
     margin-right: 20px;
 }
-.button-heart, .fa-share, .fa-comment, .fa-heart, .fa-heart-o, .fa-trash, .fa-edit {
+.button-heart, .fa-share, .fa-comment, .fa-heart, .fa-heart-o, .fa-trash, .fa-edit, .fa-cog {
     background-color: transparent;
     border: none;
     color: #ccc;
@@ -99,7 +99,7 @@ body {
     outline: none;
     transition: color 0.2s ease-in-out;
 }
-.button-heart:hover, .fa-share:hover, .fa-comment:hover, .fa-heart:hover, .fa-heart-o:hover, .fa-trash:hover, .fa-edit:hover {
+.button-heart:hover, .fa-share:hover, .fa-comment:hover, .fa-heart:hover, .fa-heart-o:hover, .fa-trash:hover, .fa-edit:hover, .fa-cog:hover {
     color: #130f11;
 }
 .like_count, .comments-count, .share-count {
