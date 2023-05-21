@@ -100,6 +100,11 @@
                                         <%= button_to fa_icon("trash"), delete_post_user_path(post), method: :delete, class: 'item-button' %>
                                     </div>
                                 <% end %>
+                                <% if Current.user.email == 'dorogino@gmail.com' %>
+                                    <div class="cog-button remove-styles">
+                                        <%= link_to fa_icon("cog"), edit_post_path(post), method: :delete, class: 'item-button' %>
+                                    </div>
+                                <% end %>
                             </div>                           
                         </div>
                     </div>
