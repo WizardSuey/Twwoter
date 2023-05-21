@@ -10,7 +10,7 @@
          <%= @user.email %>
          <% if @user.vip? %>
             <span class="VIP-p">VIP</span>
-         <% elsif @user.vip? and @user.email == 'dorogino@gmail.com' %>
+         <% elsif @user.email == 'dorogino@gmail.com' %>
             <span class="VIP-p">ADMIN</span>
          <% end %>
         </h1>
@@ -73,7 +73,7 @@
                                <span><%= @user.email %></span>
                                <% if @user.vip? %>
                                     <span class="VIP-p">VIP</span>
-                               <% elsif @user.vip? and @user.email == 'dorogino@gmail.com' %>
+                               <% elsif @user.email == 'dorogino@gmail.com' %>
                                     <span class="VIP-p">ADMIN</span>
                                <% end %>
                             </h5>
