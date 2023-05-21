@@ -15,17 +15,6 @@
         <% if Current.user.email == 'dorogino@gmail.com' %> 
               <%= link_to fa_icon('bars'), edit_user_path, class: 'admin-btn' %>
         <% end %>
-        <% if Current.user.email == 'dorogino@gmail.com' %>
-            <% if @user.vip? %>
-                <div class="vip-btn">
-                    <%= button_to "Убрать VIP", demote_from_vip_user_path(@user), method: :post, class: 'btn btn-danger' %>
-                </div>
-            <% else %>
-                <div class="vip-btn">
-                    <%= button_to "Добавить VIP", promote_to_vip_user_path(@user), method: :post, class: 'btn btn-warning' %>
-                </div>
-            <% end %>
-        <% end %>
         <hr class="hr">
     </div>
     <div class="ProfileHeader">
@@ -41,6 +30,17 @@
     <div>
         <span class="subscribe-count">Подписчики: <%= @user.subscribers_count %></span> 
     </div>
+     <% if Current.user.email == 'dorogino@gmail.com' %>
+            <% if @user.vip? %>
+                <div class="vip-btn">
+                    <%= button_to "Убрать VIP", demote_from_vip_user_path(@user), method: :post, class: 'btn btn-danger' %>
+                </div>
+            <% else %>
+                <div class="vip-btn">
+                    <%= button_to "Добавить VIP", promote_to_vip_user_path(@user), method: :post, class: 'btn btn-warning' %>
+                </div>
+            <% end %>
+        <% end %>
      <div>
          <span class="subscribe-count"></span>
      </div>
