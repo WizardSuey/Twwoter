@@ -45,13 +45,13 @@ class UsersController < ApplicationController
     redirect_to request.referrer
   end
   
-  def promote_to_vip
+  def promote_to_vip1
     @user = User.find(params[:id])
     @user.update(vip1: true)
     redirect_to @user
   end
   
-  def demote_from_vip
+  def demote_from_vip1
     @user = User.find(params[:id])
     @user.update(vip1: false)
     redirect_to @user
