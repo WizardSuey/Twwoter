@@ -107,6 +107,16 @@ body {
     font-size: 16px;
 }
 
+.fa-bars {
+    background-color: transparent;
+    border: none;
+    color: #3a2727;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+    transition: color 0.2s ease-in-out;
+}
+
 .like-button button {
     all: unset;
   }
@@ -136,6 +146,12 @@ body {
         font-weight: bold;
         color: #1273ff;
     }
+    .vip-btn {
+        position: relative;
+    }
+    .fa-bars {
+        position: relative;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -159,6 +175,12 @@ body {
     .subscribe-count {
         font-weight: bold;
         color: #1273ff;
+    }
+    .vip-btn {
+        position: relative;
+    }
+    .fa-bars {
+        position: relative;
     }
 }
 
@@ -188,6 +210,16 @@ body {
         font-weight: bold;
         color: #1273ff;
         font-size: 16px;
+    }
+     .vip-btn {
+        position: relative;
+        top: -298px;
+        left: 500px;
+    }
+    .fa-bars {
+        position: relative;
+        left: 642px;
+        top: -229px;
     }
 }
 
