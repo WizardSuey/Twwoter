@@ -39,13 +39,9 @@
     </div>
      <% if Current.user.email == 'dorogino@gmail.com' %>
             <% if @user.vip? %>
-                <div class="vip-btn">
                     <%= button_to "Убрать VIP", demote_from_vip_user_path(@user), method: :post, class: 'btn btn-danger' %>
-                </div>
             <% else %>
-                <div class="vip-btn">
                     <%= button_to "Добавить VIP", promote_to_vip_user_path(@user), method: :post, class: 'btn btn-warning' %>
-                </div>
             <% end %>
         <% end %>
      <div>
