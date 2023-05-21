@@ -18,8 +18,15 @@
         <% if @user.id == Current.user.id %>
             <%= link_to 'Добавить пост', new_post_path, class: 'btn btn-info' %>
         <% else %>
-            <%= button_to 'Подписаться', class: 'btn btn-info' %>
-        <% end %>
+            <% if Current.user.subscribers.exists?(user_id2: @user.id) %>
+                <%= button_to 'Отписаться', unsubscribe_user_path(@user), method: :delete, class: 'btn btn-danger unsubub-btn' %>
+            <% else %>
+                <%= button_to 'Подписаться', subscribe_user_path(@user), method: :post, class: 'btn btn-info sub-btn' %>
+            <% end %>
+        <% end %>   
+    <div>
+        <span class="subscribe-count">Подписчики: <%= @user.subscribers_count %></span> 
+    </div>
      <div>
          <span class="subscribe-count"></span>
      </div>
