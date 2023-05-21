@@ -152,6 +152,16 @@ body {
     .fa-bars {
         position: relative;
     }
+    .VIP-p {
+        display: inline-block;
+        padding: 0.3em 0.5em;
+        border-radius: 1em;
+        background-color: #FFD700;
+        color: #333;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
 }
 
 @media only screen and (max-width: 500px) {
@@ -185,10 +195,14 @@ body {
         position: relative;
     }
     .VIP-p {
-        color: red;
+        display: inline-block;
+        padding: 0.3em 0.5em;
+        border-radius: 1em;
+        background-color: #FFD700;
+        color: #333;
         font-weight: bold;
         text-transform: uppercase;
-        font-size: 25px;
+        letter-spacing: 0.1em;
       }
 }
 
@@ -230,9 +244,14 @@ body {
         top: -229px;
     }
     .VIP-p {
-        color: red;
+        display: inline-block;
+        padding: 0.3em 0.5em;
+        border-radius: 1em;
+        background-color: #FFD700;
+        color: #333;
         font-weight: bold;
         text-transform: uppercase;
+        letter-spacing: 0.1em;
       }
 }
 
