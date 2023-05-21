@@ -8,7 +8,7 @@
         <% end %>
         <h1 class="profile-email">
          <%= @user.email %>
-         <% if @user.vip? %>
+         <% if @user.vip1? %>
             <span class="VIP-p">VIP</span>
          <% elsif @user.email == 'dorogino@gmail.com' %>
             <span class="VIP-p">ADMIN</span>
@@ -67,7 +67,7 @@
                         <% if post.user == @user.email %>
                             <h5>
                                <span><%= @user.email %></span>
-                               <% if @user.vip? %>
+                               <% if @user.vip1? %>
                                     <span class="VIP-p">VIP</span>
                                <% elsif @user.email == 'dorogino@gmail.com' %>
                                     <span class="VIP-p">ADMIN</span>
