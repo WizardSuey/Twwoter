@@ -12,6 +12,9 @@
              <%= link_to fa_icon('edit'), password_path %>
           </div>
         <% end %>
+        <% if Current.user.email == 'dorogino@gmail.com' %> 
+            <%= link_to fa_icon('bars'), edit_user_path %>
+        <% end %>
         <hr class="hr">
     </div>
     <div class="ProfileHeader">
