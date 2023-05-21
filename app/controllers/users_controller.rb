@@ -53,13 +53,13 @@ class UsersController < ApplicationController
 
   def promote_to_vip
     @user = User.find(params[:id])
-    @user.increment!(:vip)
+    @user.update(:vip)
     redirect_to @user
   end
   
   def demote_from_vip
     @user = User.find(params[:id])
-    @user.decrement!(:vip)
+    @user.update(:vip)
     redirect_to @user
   end
 
