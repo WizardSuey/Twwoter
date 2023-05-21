@@ -132,6 +132,10 @@ body {
     .fa-edit {
         color: #130f11;
     }
+    .subscribe-count {
+        font-weight: bold;
+        color: #1273ff;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -151,6 +155,10 @@ body {
     }
     .fa-edit {
         color: #130f11;
+    }
+    .subscribe-count {
+        font-weight: bold;
+        color: #1273ff;
     }
 }
 
@@ -175,6 +183,11 @@ body {
         left: 643px;
         top: -246px;
         color: #130f11;
+    }
+    .subscribe-count {
+        font-weight: bold;
+        color: #1273ff;
+        font-size: 16px;
     }
 }
 
