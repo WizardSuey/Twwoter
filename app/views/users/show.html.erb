@@ -17,7 +17,12 @@
     <div class="ProfileHeader">
         <% if @user.id == Current.user.id %>
             <%= link_to 'Добавить пост', new_post_path, class: 'btn btn-info' %>
+        <% else %>
+            <%= button_to 'Подписаться', class: 'btn btn-info' %>
         <% end %>
+     <div>
+         <span class="subscribe-count"></span>
+     </div>
     </div>
     <% @posts.each do |post| %>
         <% if post.user == @user.email %>
