@@ -16,6 +16,6 @@
      </div>
       
 <% end %>
-<% if Current.user.email == @newtweet.user || Current.user.email == 'dorogino@gmail.com' %>
+<% if Current.user.email == @newtweet.user || Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com %>
     <%= button_to "Delete", edit_tweet_path(@newtweet), method: :delete, title: 'Удалить вопрос', class: 'btn btn-danger' %>
 <% end %>
