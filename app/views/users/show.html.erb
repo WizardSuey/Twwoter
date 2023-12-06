@@ -6,7 +6,7 @@
             <%= @user.email %>
             <% if @user.vip? %>
                 <span class="VIP-p">VIP</span>
-            <% elsif @user.email == 'dorogino@gmail.com' && @user.email == 'amigo2542@gmail.com' %>
+            <% elsif @user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com' %>
                 <span class="VIP-p">ADMIN</span>
             <% end %>
         </h1>
@@ -15,7 +15,7 @@
             <%= link_to fa_icon('edit'), password_path %>
           </div>
         <% end %>
-        <% if Current.user.email == 'dorogino@gmail.com' %> 
+        <% if Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com' %> 
             <%= link_to fa_icon('bars'), edit_user_path, class: 'admin-btn' %>
         <% end %>
         <hr class="hr">
@@ -33,7 +33,7 @@
     <div>
         <span class="subscribe-count">Подписчики: <%= abbreviated_number(@user.subscribers_count) %></span> 
     </div>
-    <% if Current.user.email == 'dorogino@gmail.com' %>
+    <% if Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com' %>
         <% if @user.vip? %>    
                 <%= button_to "Убрать VIP", demote_from_vip_user_path(@user), method: :post, class: 'btn btn-danger'%>  
         <% else %>
@@ -58,7 +58,7 @@
                                 <span><%= @user.email %></span>
                                 <% if @user.vip? %>
                                     <span class="VIP-p">VIP</span>
-                                <% elsif  @user.email == 'dorogino@gmail.com' %>
+                                <% elsif  @user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com' %>
                                     <span class="VIP-p">ADMIN</span>
                                 <% end %>
                             </h5>
@@ -95,12 +95,12 @@
                                     <button class="fa-solid fa-share fa-lg"></button>
                                     <span class="share-count">0</span>
                                 </div>
-                                <% if Current.user.email == post.user || Current.user.email == 'dorogino@gmail.com' %>
+                                <% if Current.user.email == post.user || Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com %>
                                     <div class="trash-button remove-styles">
                                         <%= button_to fa_icon("trash"), delete_post_user_path(post), method: :delete, class: 'item-button' %>
                                     </div>
                                 <% end %>
-                                <% if Current.user.email == 'dorogino@gmail.com' %>
+                                <% if Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com %>
                                     <div class="cog-button remove-styles">
                                         <%= link_to fa_icon("cog"), edit_post_path(post), method: :delete, class: 'item-button' %>
                                     </div>
