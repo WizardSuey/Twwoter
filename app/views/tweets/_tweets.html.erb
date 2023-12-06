@@ -10,7 +10,7 @@
                     <%= link_to "#{tweet.user}", "/user/#{user.id}"%>
                     <% if user.vip? %>
                         <span class="VIP-p">VIP</span>
-                    <% elsif user.email == 'dorogino@gmail.com' %>
+                    <% elsif user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com %>
                         <span class="VIP-p">ADMIN</span>
                     <% end %>
                 </strong>
@@ -19,7 +19,7 @@
         </div>
         <br>
         <p class="tweet-body"><%= tweet.body %></p>
-        <% if tweet.user == Current.user.email || Current.user.email == 'dorogino@gmail.com' %>
+        <% if tweet.user == Current.user.email || Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com %>
             <%= link_to "Изменить пост", edit_tweet_path(tweet) %>
         <% end %>
     </div>
