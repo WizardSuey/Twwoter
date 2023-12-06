@@ -29,6 +29,11 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    redirect_to "/user/#{Current.user.id}", notice: 'Пост успешно удалён.'
+  end
+
   def like
     @post = Post.find(params[:id])
     #@user = User.find(params[:id])
