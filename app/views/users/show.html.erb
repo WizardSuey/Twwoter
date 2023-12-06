@@ -95,12 +95,12 @@
                                     <button class="fa-solid fa-share fa-lg"></button>
                                     <span class="share-count">0</span>
                                 </div>
-                                <% if Current.user.email == post.user || Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com %>
+                                <% if Current.user.email == post.user || Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com' %>
                                     <div class="trash-button remove-styles">
                                         <%= button_to fa_icon("trash"), delete_post_user_path(post), method: :delete, class: 'item-button' %>
                                     </div>
                                 <% end %>
-                                <% if Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com %>
+                                <% if Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com' %>
                                     <div class="cog-button remove-styles">
                                         <%= link_to fa_icon("cog"), edit_post_path(post), method: :delete, class: 'item-button' %>
                                     </div>
