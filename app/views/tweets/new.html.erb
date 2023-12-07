@@ -1,4 +1,4 @@
-<h1>Добавить пост</h1>
+<h1>Добавить занятие</h1>
 
 <%= form_with model: @newtweet, url: new_tweet_path, :html => { :multipart => true }, data: {turbo: false} do |form| %>
     <%= render "shared/form_errors", form: form %>
