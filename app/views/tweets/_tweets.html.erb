@@ -23,7 +23,13 @@
             <%= link_to "Изменить занятие", edit_tweet_path(tweet) %>
         <% end %>
         <%# button_to 'Записаться на занятие', class: 'btn btn-mrimary' %>
-        <button class="btn btn-primary">Записаться на занятие</button>
+        <style>
+          .btnA {
+            margin-left: 3px;
+          }
+        </style>
+
+        <button class="btn btn-primary btnA", style="">Записаться на занятие</button>
     </div>
 </div>
 <% end %>
