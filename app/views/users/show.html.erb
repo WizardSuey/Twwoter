@@ -5,7 +5,7 @@
         <h1 class="profile-email">
             <%= @user.email %>
             <% if @user.vip? %>
-                <span class="VIP-p">VIP</span>
+                <span class="VIP-p">ПРЕП</span>
             <% elsif @user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com' %>
                 <span class="VIP-p">ADMIN</span>
             <% end %>
@@ -35,9 +35,9 @@
     </div>
     <% if Current.user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com' %>
         <% if @user.vip? %>    
-                <%= button_to "Убрать VIP", demote_from_vip_user_path(@user), method: :post, class: 'btn btn-danger'%>  
+                <%= button_to "Убрать ПРЕП", demote_from_vip_user_path(@user), method: :post, class: 'btn btn-danger'%>  
         <% else %>
-                <%= button_to "Добавить VIP", promote_to_vip_user_path(@user), method: :post, class: 'btn btn-warning'%>
+                <%= button_to "Добавить ПРЕП", promote_to_vip_user_path(@user), method: :post, class: 'btn btn-warning'%>
         <% end %>
     <% end %>
     </div>
@@ -57,7 +57,7 @@
                             <h5>
                                 <span><%= @user.email %></span>
                                 <% if @user.vip? %>
-                                    <span class="VIP-p">VIP</span>
+                                    <span class="VIP-p">ПРЕП</span>
                                 <% elsif  @user.email == 'dorogino@gmail.com' || @user.email == 'amigo2542@gmail.com' %>
                                     <span class="VIP-p">ADMIN</span>
                                 <% end %>
