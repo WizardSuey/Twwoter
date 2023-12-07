@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between align-items-center">
     <h1>Занятия</h1>
-    <% if user.vip? %>
+    <% if Current.user.vip? %>
         <%= link_to 'Добавить занятие', new_tweet_path, class: 'btn btn-primary' %>
     <% end %>
 </div>
